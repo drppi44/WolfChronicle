@@ -1,5 +1,9 @@
 # Hybrid RAG with FastAPI, PostgreSQL and pgvector
 
+<p align="center">
+  <img src="data/wolf.png" width="700">
+</p>
+
 A Retrieval-Augmented Generation (RAG) application built from scratch using FastAPI, PostgreSQL, pgvector and OpenAI.
 
 The project combines **semantic search** (vector embeddings) and **lexical search** (PostgreSQL Full-Text Search) using **Reciprocal Rank Fusion (RRF)** to retrieve the most relevant context before generating an answer with an LLM.
