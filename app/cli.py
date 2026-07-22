@@ -4,7 +4,7 @@ from pathlib import Path
 
 from app.db import SessionLocal
 from app.ingest import ingest
-from app.chunks_repository import search_chunks
+from app.chunks_repository import search_semantic
 from app.rag import ask
 
 
@@ -18,9 +18,10 @@ async def main():
         query = " ".join(sys.argv[2:])
 
         async with SessionLocal() as session:
-            chunks = await search_chunks(
+            chunks = await search_semantic(
                 session=session,
                 query=query,
+                limit=10,
             )
 
             for chunk in chunks:

@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.chunks_repository import search_chunks
+from app.chunks_repository import search_hybrid
 from app.embeddings import client
 
 
@@ -8,7 +8,7 @@ async def ask(
     session: AsyncSession,
     question: str,
 ) -> str:
-    chunks = await search_chunks(
+    chunks = await search_hybrid(
         session=session,
         query=question,
     )
